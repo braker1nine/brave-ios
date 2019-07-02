@@ -99,6 +99,7 @@ extension PasscodeEntryViewController: PasscodeInputViewDelegate {
             authenticationInfo?.recordValidation()
             KeychainWrapper.sharedAppContainerKeychain.setAuthenticationInfo(authenticationInfo)
             delegate?.passcodeValidationDidSucceed()
+            passcodePane.codeInputView.resetCode()
         } else {
             passcodePane.shakePasscode()
             failIncorrectPasscode(inputView)
